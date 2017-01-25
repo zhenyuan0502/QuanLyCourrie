@@ -1,0 +1,118 @@
+﻿<UserControl x:Class="Program.ListDistributor"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Program"
+             mc:Ignorable="d" 
+             FontSize="20"
+             Margin="0,10,0,0">
+    <StackPanel Orientation="Vertical">
+        <StackPanel Orientation="Horizontal" Margin="0,0,0,20" >
+            <ComboBox Width="300" SelectedIndex="0" FontSize="26" Margin="0,0,20,0" IsEditable="True" IsReadOnly="True">
+                <ComboBoxItem Content="Lọc tất cả"></ComboBoxItem>
+                <ComboBoxItem Content="Lọc nâng cao"></ComboBoxItem>
+            </ComboBox>
+            <Button FontSize="22" Margin="0,0,20,0" BorderThickness="0">
+                <Button.Background>
+                    <SolidColorBrush Color="#FFF7F7F7" Opacity="0.5"/>
+                </Button.Background>
+                <Button.BorderBrush>
+                    <SolidColorBrush Color="{DynamicResource Gray6}" Opacity="0.5"/>
+                </Button.BorderBrush> Nhập danh sách
+            </Button>
+            <Button FontSize="22" BorderThickness="0">
+                <Button.Background>
+                    <SolidColorBrush Color="#FFF7F7F7" Opacity="0.5"/>
+                </Button.Background>
+                <Button.BorderBrush>
+                    <SolidColorBrush Color="{DynamicResource Gray6}" Opacity="0.5"/>
+                </Button.BorderBrush> Xuất danh sách
+            </Button>
+        </StackPanel>
+        <DataGrid x:Name="DataGrid" ItemsSource="{Binding dgExportingBill}" AutoGenerateColumns="True">
+            <DataGrid.Columns>
+                <DataGridTemplateColumn Header="☐"  IsReadOnly="True">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding dgColumnRadio}"></TextBlock>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="Mã nhà PP" IsReadOnly="True">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding dgColumnMaNhaPhanPhoi}"></TextBlock>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="Tên nhà PP" IsReadOnly="True">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding dgColumnTenNhaPP}"></TextBlock>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="Số điện thoại" >
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding dgColumnSoDienThoai}"></TextBlock>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                
+
+                <DataGridTemplateColumn Header="Số tiền đã mua" >
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding dgColumnSoTienDaMua}"></TextBlock>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+                <DataGridTemplateColumn Header="Số tiền còn thiếu" >
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding dgColumnSoTienConThieu}"></TextBlock>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+                <DataGridTemplateColumn Header="Mã số thuế" >
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding dgColumnMaSoThue}"></TextBlock>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+                <DataGridTemplateColumn Header="Số tài khoản" >
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding dgColumnSoTaiKhoan}"></TextBlock>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+                <DataGridTemplateColumn Header="Ghi chú" >
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding dgColumnGhiChu}"></TextBlock>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+                <DataGridTemplateColumn Header="Tương tác" IsReadOnly="True">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <StackPanel>
+                                <Button>Xoá</Button>
+                                <Button>Sửa</Button>
+                            </StackPanel>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+    </StackPanel>
+</UserControl>

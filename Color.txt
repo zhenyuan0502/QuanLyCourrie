@@ -1,0 +1,2 @@
+Blue: #FF008CDC
+Purple: #FFC067F3
