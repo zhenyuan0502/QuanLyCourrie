@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="Program.ImportFromFile"
+﻿<UserControl x:Class="Program.Import"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -15,31 +15,34 @@
             </ComboBox>
             <DatePickerTextBox Foreground="#FF4A1DAC" FontWeight="Bold" FontSize="26">Thứ năm, 26/01/2017, 12:00 AM</DatePickerTextBox>
         </StackPanel>
+        <RadioButton IsChecked="True" FontWeight="Bold" FontSize="26" Foreground="#FF3CA202" GroupName="rbInput" Margin="0,0,0,10">Nhập theo khoảng</RadioButton>
+        <StackPanel Orientation="Horizontal" Margin="0,0,0,10" HorizontalAlignment="Center">
+            <ComboBox IsEditable="True" IsReadOnly="True" Text="Loại dây" FontSize="24" Margin="0,0,20,0" BorderThickness="0" Padding="2" VerticalContentAlignment="Stretch" HorizontalContentAlignment="Stretch" >
+                <ComboBoxItem Content="A"></ComboBoxItem>
+            </ComboBox>
+  
+            <ComboBox IsEditable="True" IsReadOnly="True"  Text="Kích thước nhỏ nhất" FontSize="24" Margin="0,0,10,0" BorderThickness="0" VerticalContentAlignment="Stretch" HorizontalContentAlignment="Stretch" >
+                <ComboBoxItem Content="30"></ComboBoxItem>
+            </ComboBox>
 
-        <StackPanel Orientation="Horizontal" Margin="0,0,0,20" HorizontalAlignment="Center" >
-            <Button FontSize="22" Margin="0,0,10,0" BorderThickness="0" Width="150">
+            <ComboBox IsEditable="True" IsReadOnly="True" Text="Kích thước lớn nhất" FontSize="24" Margin="0,0,10,0" BorderThickness="0" VerticalContentAlignment="Stretch" HorizontalContentAlignment="Stretch" >
+                <ComboBoxItem Content="30"></ComboBoxItem>
+            </ComboBox>
+            <TextBlock FontSize="24" Margin="0,0,10,0" FontWeight="Bold" Padding="2">Số lượng</TextBlock>
+            <TextBox FontSize="24" Margin="0,0,10,0" BorderThickness="0" Width="150" Name="tbSoLuong" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch"></TextBox>
+                
+            <Button Foreground="#FF05D359" BorderThickness="0" FontSize="20" FontWeight="Bold" BorderBrush="{x:Null}" Width="100">
                 <Button.Background>
-                    <SolidColorBrush Color="#FFF7F7F7" Opacity="0.5"/>
+                    <SolidColorBrush Color="#FF62176E" Opacity="0.5"/>
                 </Button.Background>
-                <Button.BorderBrush>
-                    <SolidColorBrush Color="{DynamicResource Gray6}" Opacity="0.5"/>
-                </Button.BorderBrush> Mở file
-            </Button>
-            <TextBlock FontWeight="Bold" FontSize="26" Margin="0,0,20,0" Padding="2">Tên file</TextBlock>
-            <Button FontSize="22" Margin="0,0,20,0" BorderThickness="0">
-                <Button.Background>
-                    <SolidColorBrush Color="#FFF7F7F7" Opacity="0.5"/>
-                </Button.Background>
-                <Button.BorderBrush>
-                    <SolidColorBrush Color="{DynamicResource Gray6}" Opacity="0.5"/>
-                </Button.BorderBrush> Hiển thị lên danh sách
+                Thêm
             </Button>
         </StackPanel>
-
-
+        
+        <RadioButton FontWeight="Bold" FontSize="26" Foreground="#FF3CA202" GroupName="rbInput" Margin="0,0,0,20">Nhập từng số</RadioButton>
         <StackPanel Orientation="Horizontal" Height="450">
             <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" Width="810" Margin="0,0,20,0">
-                <DataGrid x:Name="DataGrid" ItemsSource="{Binding dgExport}" AutoGenerateColumns="True">
+                <DataGrid x:Name="DataGrid" ItemsSource="{Binding dgExport}" AutoGenerateColumns="True"  >
                     <DataGrid.Columns>
                         <DataGridTemplateColumn Header="STT"  IsReadOnly="True">
                             <DataGridTemplateColumn.CellTemplate>
@@ -124,7 +127,8 @@
                     <TextBlock Foreground="#FFF74848" FontWeight="Bold" FontSize="26">Đồng</TextBlock>
                 </StackPanel>
                 <RadioButton Foreground="#FFF74848" FontWeight="Bold" FontSize="26" GroupName="rbPaymentMethod">Trả đủ</RadioButton>
-                <Grid Margin="0,0,0,10" >
+                
+                <Grid >
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="1*" />
                         <ColumnDefinition Width="3*" />
@@ -136,22 +140,22 @@
                     </Grid.RowDefinitions>
                     <TextBlock Foreground="#FF169B01" FontWeight="Bold" FontSize="42" Grid.Column="0" Grid.Row="0" Margin="0,0,10,0">Tổng tiền</TextBlock>
                     <TextBlock Foreground="#FF169B01" FontWeight="Bold" FontSize="42" Grid.Column="1" Grid.Row="0">000.000.000</TextBlock>
-                    <TextBlock Foreground="#FF0781C7" FontWeight="Bold" FontSize="42" Grid.Column="0" Grid.Row="1" Margin="0,0,10,0">Thanh toán</TextBlock>
+                    <TextBlock Foreground="#FF0781C7" FontWeight="Bold" FontSize="42" Grid.Column="0" Grid.Row="1" Margin="0,0,10,10">Thanh toán</TextBlock>
                     <TextBlock Foreground="#FF0781C7" FontWeight="Bold" FontSize="42" Grid.Column="1" Grid.Row="1">000.000.000</TextBlock>
-                    
                 </Grid>
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                     <Button Width="150" Height="150" BorderThickness="0" Margin="0,0,20,0"  >
                         <Button.Background>
-                            <ImageBrush ImageSource="resource/run.png"/>
+                            <ImageBrush ImageSource="/resource/run.png"/>
                         </Button.Background>
                     </Button>
                     <Button Width="150" Height="150" BorderThickness="0"  >
                         <Button.Background>
-                            <ImageBrush ImageSource="resource/printer.png"/>
+                            <ImageBrush ImageSource="/resource/printer.png"/>
                         </Button.Background>
                     </Button>
                 </StackPanel>
+                
             </StackPanel>
         </StackPanel>
     </StackPanel>

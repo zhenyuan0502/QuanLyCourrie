@@ -14,7 +14,7 @@
         Height="auto"
         ShowInTaskbar="True"
         WindowState="Maximized"
-        Icon="resource/logo.ico"
+        Icon="/resource/logo.ico"
         Title="Phần mềm quản lý bán hàng dây Courrie"
         WindowTransitionsEnabled="True"
         >

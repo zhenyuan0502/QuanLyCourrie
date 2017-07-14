@@ -8,12 +8,13 @@
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Program</RootNamespace>
-    <AssemblyName>Program</AssemblyName>
+    <AssemblyName>Courrie</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <WarningLevel>4</WarningLevel>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -26,7 +27,6 @@
     <MapFileExtensions>true</MapFileExtensions>
     <ApplicationRevision>0</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
@@ -48,6 +48,12 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>Program.App</StartupObject>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>logo.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="MahApps.Metro, Version=1.4.1.0, Culture=neutral, PublicKeyToken=f4fb5a3c4d1e5b4f, processorArchitecture=MSIL">
@@ -78,51 +84,51 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="CreateCustomer.xaml">
+    <Page Include="View\CreateCustomer.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="CreateDistributor.xaml">
+    <Page Include="View\CreateDistributor.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="DataControl.xaml">
+    <Page Include="View\DataControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Export.xaml">
+    <Page Include="View\Export.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="ExportingBill.xaml">
+    <Page Include="View\ExportingBill.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Import.xaml">
+    <Page Include="View\Import.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="ImportFromFile.xaml">
+    <Page Include="View\ImportFromFile.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="ImportingBill.xaml">
+    <Page Include="View\ImportingBill.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="ListCustomer.xaml">
+    <Page Include="View\ListCustomer.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="ListDistributor.xaml">
+    <Page Include="View\ListDistributor.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="ListMenu.xaml">
+    <Page Include="View\ListMenu.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="MainWindow.xaml">
+    <Page Include="View\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -130,50 +136,50 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="CreateCustomer.xaml.cs">
+    <Compile Include="View\CreateCustomer.xaml.cs">
       <DependentUpon>CreateCustomer.xaml</DependentUpon>
     </Compile>
-    <Compile Include="CreateDistributor.xaml.cs">
+    <Compile Include="View\CreateDistributor.xaml.cs">
       <DependentUpon>CreateDistributor.xaml</DependentUpon>
     </Compile>
-    <Compile Include="DataControl.xaml.cs">
+    <Compile Include="View\DataControl.xaml.cs">
       <DependentUpon>DataControl.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Export.xaml.cs">
+    <Compile Include="View\Export.xaml.cs">
       <DependentUpon>Export.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ExportingBill.xaml.cs">
+    <Compile Include="View\ExportingBill.xaml.cs">
       <DependentUpon>ExportingBill.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Import.xaml.cs">
+    <Compile Include="View\Import.xaml.cs">
       <DependentUpon>Import.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ImportFromFile.xaml.cs">
+    <Compile Include="View\ImportFromFile.xaml.cs">
       <DependentUpon>ImportFromFile.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ImportingBill.xaml.cs">
+    <Compile Include="View\ImportingBill.xaml.cs">
       <DependentUpon>ImportingBill.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ListCustomer.xaml.cs">
+    <Compile Include="View\ListCustomer.xaml.cs">
       <DependentUpon>ListCustomer.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ListDistributor.xaml.cs">
+    <Compile Include="View\ListDistributor.xaml.cs">
       <DependentUpon>ListDistributor.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ListMenu.xaml.cs">
+    <Compile Include="View\ListMenu.xaml.cs">
       <DependentUpon>ListMenu.xaml</DependentUpon>
     </Compile>
-    <Compile Include="MainWindow.xaml.cs">
+    <Compile Include="View\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="Management.xaml">
+    <Page Include="View\Management.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Management.xaml.cs">
+    <Compile Include="View\Management.xaml.cs">
       <DependentUpon>Management.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -223,6 +229,13 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="logo.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Model\" />
+    <Folder Include="ViewModel\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
